@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app1',# Register
     'app21', 
     'app22',
+    'django.contrib.humanize',
 ]
 
 MIDDLEWARE = [

@@ -56,8 +56,27 @@
 {% endcomment %}
 
 <!--if-->
+{% comment %}
 {% if sub1 >= PM and sub2 >= PM %}
     <p>RESULT : PASS</p>
 {% else %}
     <p>RESULT : FAIL</p>
 {% endif %}
+{% endcomment %}
+
+{% comment %}
+<!-- include -->
+{% include "app22/footer.html" %}
+
+<!-- load -->
+{% load humanize  %} <!--load-->
+<p>{{ 20000004|intword }}</p> <!--call-->
+
+<!-- lorem-->
+<p> {% lorem random %} </p>
+<p> {% lorem 1 p random %} </p>
+<p> {% lorem 5 w random %} </p>
+
+<!-- now -->
+<p>{% now "Y-m-d"%}</p>
+{% endcomment %}

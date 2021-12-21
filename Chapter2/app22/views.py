@@ -59,5 +59,10 @@ def index221(request):
     # for
 
     #if
+    """
     context = {'sub1':34, 'sub2':54, 'PM':40}
     return render(request, 'app22/index.html', context)
+    """
+
+    # extends, block
+    return render(request, 'app22/body.html')

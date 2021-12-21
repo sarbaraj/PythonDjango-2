@@ -1,0 +1,14 @@
+<h2>Form-1</h2>
+<form action='sendvalue1' method='get'>
+    <p>USER : <input type='text' name='txtUser'></p>
+    <p>PASS : <input type='text' name='txtPass'></p>
+    <p><input type='submit' value='SEND'></p>
+</form>
+
+<h2>Form-2</h2>
+<form action='sendvalue1' method='post'>
+    {% csrf_token %}
+    <p>USER : <input type='text' name='txtUser'></p>
+    <p>PASS : <input type='text' name='txtPass'></p>
+    <p><input type='submit' value='SEND'></p>
+</form>

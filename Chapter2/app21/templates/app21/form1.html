@@ -1,0 +1,15 @@
+<h1>Calculation-1</h1>
+<form action="sendvalue3" method="get">
+    <p>First no : <input type="text" name="n1"></p>
+    <p>Second no : <input type="text" name="n2"></p>
+    <p><input type="submit" value="SEND"></p>
+</form>
+<br/>
+<br/>
+<h1>Calculation-2</h1>
+<form action="sendvalue4" method="post">
+    {% csrf_token %}
+    <p>First no : <input type="text" name="n1"></p>
+    <p>Second no : <input type="text" name="n2"></p>
+    <p><input type="submit" value="SEND"></p>
+</form>

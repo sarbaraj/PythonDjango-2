@@ -1,0 +1,63 @@
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+<h2>Welcome to app22</h2>
+<!--
+<p>Num1 {{n1}} </p>
+<p>Num2 {{n2}} </p>
+
+{# variable #}
+<p>Result {{n3}} </p> 
+
+{# This is comment #}
+
+{# tag -> programming section #}
+{# {%  %} #}
+-->
+{% comment %}
+
+{% autoescape on %}
+    {{str1}}
+{% endautoescape %}
+
+{% autoescape off %}
+    {{str1}}
+{% endautoescape %}
+
+{% endcomment %}
+
+{% comment %}
+    {{str1}}
+{% endcomment %}
+
+<!-- csrf_token -->
+{% comment %}
+<h2>csrf_token</h2>
+<h3>USER {{user}}</h3>
+<h3>PASS {{pass}}</h3>
+<h3>REM {{remarks}}</h3>
+<h3>KEY {{key}} </h3>
+{% endcomment %}
+
+<!-- cycle -->
+{% comment %}
+<h3>{{nums}}</h3>
+{% for num in nums %}
+    <p class='{% cycle 's1' 's2' 's3' %}'>
+        {% filter  upper %}
+            {{num}}
+        {% endfilter %}
+    </p>
+{% endfor%}
+{% endcomment %}
+
+<!-- firstof -->
+{% comment %}
+{% firstof n1 n2 n3 'default'  %}
+{% endcomment %}
+
+<!--if-->
+{% if sub1 >= PM and sub2 >= PM %}
+    <p>RESULT : PASS</p>
+{% else %}
+    <p>RESULT : FAIL</p>
+{% endif %}

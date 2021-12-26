@@ -80,3 +80,63 @@
 <!-- now -->
 <p>{% now "Y-m-d"%}</p>
 {% endcomment %}
+
+<!-- filters -->
+{% comment %} 
+<p>{{ num1 | add:5}}</p>
+{% endcomment %}
+
+<!-- addslashes -->
+{% comment %}
+<p>{{ str1}}</p>
+<p>{{ str1|addslashes}}</p>
+{% endcomment %}
+
+<!-- capfirst -->
+{% comment %}
+<p>{{ str1}}</p>
+<p>{{ str1|capfirst}}</p>
+{% endcomment %}
+
+<!-- center-->
+{% comment %}
+<p>{{ str1|center:"50" }}</p>
+<p>{{ str1|cut:"a" }}</p>
+{% endcomment %}
+
+<!--date -->
+{% comment %}
+<p>{{ str1 }}</p>
+<p>{{ str1|date:"SHORT_DATE_FORMAT"}}</p>
+<p>{{ str1|date:"Y m d h i s"}}</p>
+{% endcomment %}
+
+<!-- default default_if_none -->
+{% comment %}
+<p>{{ str1 }}</p>
+<p>{{ str1|default:'***'}}</p> <!-- print BLANK if str1 is None -->
+{% endcomment %}
+
+<!-- dictsort -->
+{% comment %}
+<p>{{ var1 }}</p>
+<p>{{ var1|dictsort:'name' }}</p>
+{% endcomment %}
+
+<!--floatformat-->
+<p>{{ var1 }}</p>
+<p>{{ var1|floatformat:2 }}</p>
+<p>{{ var1|floatformat:3 }}</p>
+<p>{{ var1|floatformat:7 }}</p>
+<p>{{ "Broadway"|length}}</p>
+<p>{{ "Broadway"|length_is:"8"}}</p>
+<p>{{ "Broadway"|ljust:"15"}}</p>
+<p>{{ "Broadway"|center:"15"}}</p>
+<p>{{ "Broadway"|rjust:"15"}}</p>
+<p>{{ "Broadway Infosys Nepal"|lower}}</p>
+<p>{{ "broadway infosys nepal"|title}}</p>
+<p>{{ "broadway infosys nepal"|upper}}</p>
+<p>{{ "broadway infosys nepal"|wordcount}}</p>
+
+
+

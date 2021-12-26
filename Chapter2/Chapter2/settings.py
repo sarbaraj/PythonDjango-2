@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app21', 
     'app22',
     'django.contrib.humanize',
+    'app3',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,7 @@ WSGI_APPLICATION = 'Chapter2.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
+#'NAME': BASE_DIR / 'db.sqlite3',
 
 DATABASES = {
     'default': {
@@ -85,6 +87,21 @@ DATABASES = {
     }
 }
 
+# admin
+# admin
+
+"""
+pip install mysqlclient
+'default': {
+        'ENGINE'  : 'django.db.backends.mysql',  
+        'NAME'    : 'db_name',                   
+        'USER'    : 'root',                     
+        'PASSWORD': '',                         
+        'HOST'    : 'localhost',                
+        'PORT'    : '3306',
+    }
+
+"""
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators

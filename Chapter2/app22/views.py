@@ -1,6 +1,15 @@
+from django.http.response import HttpResponse
 from django.shortcuts import render
+import datetime
 
 # Create your views here.
+def index(request):
+    str_html="<h2>Links</h2>"
+    str_html+="<p><a href='app1'>Link-1</a></p>" # href= url pattern
+    str_html+="<p><a href='app21/displayform'>Link-2</a></p>"
+    str_html+="<p><a href='displayform1'>Link-3</a></p>"
+    str_html+="<p><a href='sendvalue1'>Link-4</a></p>"
+    return HttpResponse(str_html)
 
 def index220(request):
     return render(request, 'app22/form1.html')
@@ -65,4 +74,49 @@ def index221(request):
     """
 
     # extends, block
+    """
     return render(request, 'app22/body.html')
+    """
+
+    # filters
+    # context  ={'num1':45}
+    # return render(request, 'app22/index.html', context)
+
+    # 
+    """
+    context  ={'str1':'I "cant" do this'}
+    return render(request, 'app22/index.html', context)
+    """
+    # capfirst # center
+    """
+    context={'str1':'broadway infosys nepal'}
+    return render(request, 'app22/index.html', context)
+    """
+
+    # date
+    """
+    current_dt = datetime.datetime.now()
+    context={'str1':current_dt}
+    return render(request, 'app22/index.html', context)
+    """
+
+    # default | default_if_none
+    """
+    var1 = None
+    context={'str1':var1}
+    return render(request, 'app22/index.html', context)
+    """
+    # dictsort
+    """
+    dict1 =[
+        {'name': 'zed', 'age': 19},
+        {'name': 'amy', 'age': 22},
+        {'name': 'joe', 'age': 31},
+    ]
+    context={'var1':dict1}
+    return render(request, 'app22/index.html', context)
+    """
+
+    # floatformat
+    context={'var1':123.4567890}
+    return render(request, 'app22/index.html', context)

@@ -1,0 +1,11 @@
+<h1>Person Edit</h1>
+<form action='receiveedit' method='post'>
+    {% csrf_token %}
+    <p>ID : <input type="text"  value={{person.id}} disabled></p>
+    <input type="hidden"  name="txtID" value={{person.id}}>
+    <p>NAME : <input type="text" name="txtName" value={{person.fullname}}></p>
+    <p>ADDRESS : <input type="text" name="txtAddress" value={{person.contactaddress}}></p>
+    <p>EMAIL : <input type="text" name="txtEmail" value={{person.email}}></p>
+    <p>PHONE : <input type="text" name="txtPhone" value={{person.phone}}></p>
+    <p><input type="submit" value="Update"></p>
+</form>

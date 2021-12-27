@@ -6,4 +6,7 @@ urlpatterns = [
     path('', v1.index),
     path('new', v1.new),
     path('receivenew', v1.receivenew),
+    path('displayedit', v1.displayedit),
+    path('receiveedit', v1.receiveedit),
+    path('displaydelete', v1.displaydelete),
 ]

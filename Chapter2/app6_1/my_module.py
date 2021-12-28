@@ -1,4 +1,4 @@
-# import mysql.connector # pip install mysql-connector-python
+import mysql.connector # pip install mysql-connector-python
 import sqlite3
 import sys
 
@@ -14,6 +14,7 @@ class person():
         return self.full_name
     def get_contact_address(self):
         return self.contact_address
+    
     # Setters
     def set_pid(self, pid):
         self.pid=pid
@@ -21,6 +22,7 @@ class person():
         self.full_name = full_name
     def set_contact_address(self, contact_address):
         self.contact_address = contact_address
+    
     #to_string
     def __str__(self):
         return str(self.pid)+","+self.full_name+","+self.contact_address
@@ -28,7 +30,7 @@ class person():
 def create_sqlite_table():
     result = "False"
     try:
-        conn = sqlite3.connect("db.sqlite")
+        conn = sqlite3.connect("db.sqlite3")
         cursor = conn.cursor()
         cursor.execute("CREATE TABLE contacts (pid integer not null primary key, full_name text not null, contact_address text not null)")
         cursor.close()
@@ -43,7 +45,7 @@ def create_sqlite_table():
 def create_mysql_table():
     result = "False"
     try:
-        conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
         cursor = conn.cursor()
         cursor.execute("CREATE TABLE contacts (pid int(3) not null primary key, full_name VARCHAR(255) not null, contact_address VARCHAR(255) not null)")
         cursor.close()
@@ -59,8 +61,8 @@ def select_all():
     persons = []
     str_sql = """SELECT * FROM contacts"""
     try:
-        #conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
-        conn = sqlite3.connect("db.sqlite")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
+        #conn = sqlite3.connect("db.sqlite")
         cursor = conn.cursor()
         cursor.execute(str_sql)
         rows = cursor.fetchall()
@@ -76,12 +78,12 @@ def select_all():
 
 def search(pid):
     person = None
-    #str_sql = """SELECT * FROM contacts WHERE pid = %s"""
-    str_sql = """SELECT * FROM contacts WHERE pid = ?"""
+    str_sql = """SELECT * FROM contacts WHERE pid = %s"""
+    # str_sql = """SELECT * FROM contacts WHERE pid = ?"""
     values = (pid, )
     try:
-        #conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
-        conn = sqlite3.connect("db.sqlite")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
+        #conn = sqlite3.connect("db.sqlite")
         cursor = conn.cursor()
         cursor.execute(str_sql, values)
         person = cursor.fetchone()
@@ -94,13 +96,13 @@ def search(pid):
 
 def insert(person):
     result = "False"
-    #str_sql = """INSERT INTO contacts VALUES(%s, %s, %s)"""
-    str_sql = """INSERT INTO contacts VALUES(?, ?, ?)"""
+    str_sql = """INSERT INTO contacts VALUES(%s, %s, %s)"""
+    # str_sql = """INSERT INTO contacts VALUES(?, ?, ?)"""
     values = (person.get_pid(), person.get_full_name(), person.get_contact_address())
     print(values)
     try:
-        #conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
-        conn = sqlite3.connect("db.sqlite")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
+        # conn = sqlite3.connect("db.sqlite")
         cursor = conn.cursor()
         cursor.execute(str_sql, values)
         conn.commit()
@@ -115,13 +117,13 @@ def insert(person):
 
 def update(person):
     result = "False"
-    #str_sql = """UPDATE contacts SET full_name=%s, contact_address=%s WHERE pid = %s"""
-    str_sql = """UPDATE contacts SET full_name=?, contact_address=? WHERE pid = ?"""
+    str_sql = """UPDATE contacts SET full_name=%s, contact_address=%s WHERE pid = %s"""
+    # str_sql = """UPDATE contacts SET full_name=?, contact_address=? WHERE pid = ?"""
     values = (person.get_full_name(), person.get_contact_address(), person.get_pid())
     print(values)
     try:
-        #conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
-        conn = sqlite3.connect("db.sqlite")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
+        # conn = sqlite3.connect("db.sqlite")
         cursor = conn.cursor()
         cursor.execute(str_sql, values)
         conn.commit()
@@ -136,12 +138,12 @@ def update(person):
 
 def delete(pid):
     result = "False"
-    #str_sql = """DELETE FROM contacts WHERE pid = %s"""
-    str_sql = """DELETE FROM contacts WHERE pid = ?"""
+    str_sql = """DELETE FROM contacts WHERE pid = %s"""
+    #str_sql = """DELETE FROM contacts WHERE pid = ?"""
     values = (pid, )
     try:
-        #conn = mysql.connector.connect(host="localhost", user="admin", password="admin@123", database="python1")
-        conn = sqlite3.connect("db.sqlite")
+        conn = mysql.connector.connect(host="localhost", user="root", password="", database="mydb")
+        # conn = sqlite3.connect("db.sqlite")
         cursor = conn.cursor()
         cursor.execute(str_sql, values)
         conn.commit()

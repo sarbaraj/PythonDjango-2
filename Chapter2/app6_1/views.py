@@ -2,16 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 import app6_1.my_module as module
 
-
 def index(request):
     persons = module.select_all()
     context = {'persons': persons}
     return render(request, 'app6_1/index.html', context)
 
-
 def new(request):
     return render(request, 'app6_1/add_new.html')
-
 
 def insert(request):
     if request.method == 'GET':

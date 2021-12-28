@@ -43,6 +43,10 @@ INSTALLED_APPS = [
     'app22',
     'django.contrib.humanize',
     'app3',
+    
+    'app4',
+    'app4_1',
+    'app6_1',
 ]
 
 MIDDLEWARE = [
@@ -81,6 +85,14 @@ WSGI_APPLICATION = 'Chapter2.wsgi.application'
 #'NAME': BASE_DIR / 'db.sqlite3',
 
 DATABASES = {
+    # 'mysql': {
+    #     'ENGINE'  : 'django.db.backends.mysql',  
+    #     'NAME'    : 'mydb',                  
+    #     'USER'    : 'root',                     
+    #     'PASSWORD': '',                         
+    #     'HOST'    : 'localhost',                
+    #     'PORT'    : '3306',
+    # },
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
@@ -89,7 +101,6 @@ DATABASES = {
 
 # admin
 # admin
-
 """
 pip install mysqlclient
 'default': {

@@ -42,7 +42,7 @@ def crud(request):
         #print(client)
 
     # Get Value
-    # client = Client.objects.get(pk=1)
+    # clients = Client.objects.get(full_name='Raj')
     # print("PK :", client)
 
     # Filter
@@ -69,13 +69,13 @@ def crud(request):
     # Order By
     # result = Client.objects.all().order_by('id')
     # result = Client.objects.all().order_by('-id')
-    # result = Client.objects.order_by('-id').order_by('full_name').order_by('contact_address')
+    # result = Client.objects.order_by('-id').order_by('full_name').order_by('-contact_address')
 
     # Result to Dict
     # results = Client.objects.values()
     # print(type(results))
     # print(type(results[0]))
-    #return render(request, "app8_1/index.html", {'results':results})
+    #return render(request, "app8_2/index.html", {'results':results})
 
     # Result to List
     # results = Client.objects.all()
@@ -84,7 +84,7 @@ def crud(request):
     # client = results[0]
     # print(type(client))
     # print(client.id, client.full_name, client.contact_address)
-    # return render(request, "app8_1/index.html", {'results':results})
+    # return render(request, "app8_2/index.html", {'results':results})
 
 # Update
     # Individual Object Update

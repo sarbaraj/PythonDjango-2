@@ -1,6 +1,5 @@
 from django.db import models
 
-
 class Person(models.Model):
     pid = models.IntegerField(primary_key=True)
     full_name = models.CharField(max_length=50)
@@ -11,12 +10,11 @@ class Person(models.Model):
 
 
 class Student(models.Model):
-    # id (auto add, primary key, int)
     full_name = models.CharField(max_length=50)
     grade = models.CharField(max_length=50)
 
     def __str__(self):
-        str(self.id)+", "+self.full_name+", "+self.grade
+        str(self.id)+", "+self.full_name+", "+self.contact_address
 
 
 class Client(models.Model):
@@ -24,8 +22,8 @@ class Client(models.Model):
     contact_address = models.CharField(max_length=50, help_text="Enter Address : ")
 
     class Meta:
-        db_table = 'tbl_client'
-        ordering = ['full_name', 'contact_address', '-id']
+        # db_table = 'tbl_client'
+        ordering = ['-id','full_name']
 
     def __str__(self):
         return str(self.id)+", "+self.full_name.upper()+", "+self.contact_address.upper()
@@ -35,8 +33,10 @@ class Client(models.Model):
 class Place(models.Model):
     name = models.CharField(max_length=50)
     address = models.CharField(max_length=80)
+
     def __str__(self):
         return "%s the place" % self.name
+
 
 class Restaurant(models.Model):
     place = models.OneToOneField(

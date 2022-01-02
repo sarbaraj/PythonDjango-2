@@ -20,8 +20,7 @@ class Migration(migrations.Migration):
                 ('contact_address', models.CharField(help_text='Enter Address : ', max_length=50)),
             ],
             options={
-                'db_table': 'tbl_client',
-                'ordering': ['full_name', 'contact_address', '-id'],
+                'ordering': ['-id', 'full_name'],
             },
         ),
         migrations.CreateModel(

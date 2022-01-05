@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app8_1',
-    'app8_2',
+    'app8_2', # Model
+    'app9_1', # Form
+    'app9_2', # ModelForm
 ]
 
 MIDDLEWARE = [

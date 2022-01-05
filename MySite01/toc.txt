@@ -1,3 +1,0 @@
-app6 : crud app manual
-app7 : admin site, create user
-app8 : crud app models

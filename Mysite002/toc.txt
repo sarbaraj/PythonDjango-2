@@ -1,9 +1,12 @@
-app8_1  :   Model
-app8_2  :   CRUD-Model
-app9_1  :   Model, Form
-app9_2  :   Model, Form
-app9_3  :   ModelForm - CRUD
-app10_1 :   GenericViews
-
-
-
+app8_1  :   Models
+app8_2  :   CRUD-Models
+app11_1 :   User Management
+app12_1 :   Session Management
+app12_2 :   Cookies Management
+app13_1 :   Middleware
+app14_1 :   Non-HTML Contents
+app15_1 :   REST-API-1
+app15_2 :   CRUD REST-API
+app15_3 :   REST-API-2
+app16_1 :   Media Upload
+app17_1 :   Send Email

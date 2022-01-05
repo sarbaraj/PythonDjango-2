@@ -37,13 +37,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app8_1',
-    'app8_2', # Model
-    'app9_1', # Form
-    'app9_2', # ModelForm
+    # 'app8_1',
+    # 'app8_2', # Model
+    #'app9_1', # Form
+    # 'app9_2', # ModelForm
+    # 'app10_1', # GenericViews
+    'rest_framework',
     'app15_1', # Simple REST-API
 ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -83,7 +84,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+    },
 }
 
 

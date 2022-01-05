@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'app8_2', # Model
     'app9_1', # Form
     'app9_2', # ModelForm
+    'app15_1', # Simple REST-API
 ]
 
 MIDDLEWARE = [

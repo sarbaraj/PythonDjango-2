@@ -3,15 +3,12 @@ from django.http import HttpResponse
 from .forms import PersonForm
 from .models import Person
 
-
 def index(request):
     return HttpResponse("Hello from App9_1")
-
 
 def display_form1(request):
     form1 = PersonForm()
     return render(request, 'app9_1/person_form1.html', {'form':form1})
-
 
 def get_form1(request):
     if request.method == 'POST':

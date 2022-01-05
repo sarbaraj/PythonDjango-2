@@ -1,0 +1,9 @@
+app8_1  :   Model
+app8_2  :   CRUD-Model
+app9_1  :   Model, Form
+app9_2  :   Model, Form
+app9_3  :   ModelForm - CRUD
+app10_1 :   GenericViews
+
+
+
